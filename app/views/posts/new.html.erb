@@ -1,0 +1,23 @@
+<body>
+
+<h1>NEW POST</h1>
+
+<%= form_with model: @post do |form| %>
+<br>
+    <%= form.label :username %>
+<br>
+    <%= form.text_field :username, placeholder: "enter username" %>
+<br><br>
+    <%= form.label :title %>
+<br>
+    <%= form.text_field :title, placeholder: "title"%>
+<br><br>
+    <%= form.label :body %>
+<br>
+    <%= form.text_area :body %>
+<br><br>
+<%= form.submit %>
+
+<% end %>
+
+</body>
