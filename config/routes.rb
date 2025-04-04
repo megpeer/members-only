@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   root to: "home#index"
   # resources :users, only: [ :new, :create, :edit, :update ]
   resources :posts, only: [ :new, :create, :index ]
+  resources :users, only: [ :new, :create ]
 end

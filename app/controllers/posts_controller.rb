@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [ :new, :create ]
+  # before_action :authenticate_user!, only: [ :new, :create ]
 
   # def edit
   #   @post = Post.find(params[:id])
@@ -20,17 +20,17 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  # def create
-  #   @post = Post.new(post_params)
-  #   if @Post.save
-  #     redirect_to new_post_path
-  #   else
-  #     render :new, status: unprocessable_entity
-  #   end
-  # end
+  def create
+    @post = Post.new(post_params)
+    if @Post.save
+      redirect_to index_path
+    else
+      render :new, status: unprocessable_entity
+    end
+  end
 
-  # private
-  # def post_params
-  #   params.expect(post: [ :user_id, :title, :body ])
-  # end
+  private
+  def post_params
+    params.expect(post: [ :user_id, :title, :body ])
+  end
 end

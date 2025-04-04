@@ -1,0 +1,33 @@
+<body>
+
+<h1>SIGN UP</h1>
+
+<%= form_with model: @user do |form| %>
+    <% if @user.errors.any? %>
+    <div class="error messages">
+        <h2>entry is invalid</h2>
+        <ul>
+            <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+    <% end %>
+<br>
+    <%= form.label :username %>
+<br>
+    <%= form.text_field :username, placeholder: "enter username" %>
+<br><br>
+    <%= form.label :password %>
+<br>
+    <%= form.password_field :password %>
+<br><br>
+    <%= form.label :password_confirmation %>
+<br>
+    <%= form.password_confirmation :password_confirmation %>
+<br><br>
+<%= form.submit %>
+
+<% end %>
+
+</body>
