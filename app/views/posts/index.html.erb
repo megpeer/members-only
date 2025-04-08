@@ -1,0 +1,16 @@
+<%= form_with model: @post do |post| %>
+        <% if post.object.errors.any? %>
+        <div>
+            <h2> <%= pluralize(post.object.errors.count, "error") %>
+            prohibited this post from being saved:</h2> 
+            <ul>
+                <% post.object.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+                <% end %>
+                </ul>
+            </div>
+        <% end %>
+    <%= post.text_area :body, placeholder: "scribe your secret message"%>
+    <br>
+    <%= post.submit "Post"%>
+<% end %>
