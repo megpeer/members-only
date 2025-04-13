@@ -1,7 +1,23 @@
 <div>
 <%= render "form"%>
 </div>
+<p>
+    all messages:
+</p>
 
-<%= turbo_frame_tag "posts" do %>
-<%= render @posts %>
+<% @posts.each do |post| %>
+<div>
+"<%= post.body%>"
+<br>
+<% if user_signed_in? %>
+~ <em><%= post.user.username%><em>
+<% else %>
+~ <em>anonymous acolyte<em>
 <% end %>
+<% end %>
+
+
+<%# 
+<%=# turbo_frame_tag "posts" do %>
+<%# <%= render @posts %>
+<%# <% end %> 
