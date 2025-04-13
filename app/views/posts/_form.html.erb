@@ -10,7 +10,10 @@
                 </ul>
             </div>
         <% end %>
+    <% if user_signed_in? %>   
     <%= post.text_area :body, placeholder: "scribe your secret message"%>
     <br>
     <%= post.submit "send message to wizard council"%>
+    <% end %>
+
 <% end %>
