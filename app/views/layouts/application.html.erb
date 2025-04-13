@@ -29,15 +29,15 @@
       <p class="alert"><%= alert %></p>
       </header>
 
-      <p>Wizard's Chambers<br>
-      log in to pierce the veil<br></p>
+      <p>Wizard Messages<br>
+      pierce the veil to break through and discover the wizard identities!<br></p>
       <% if user_signed_in? %>
       <p>
-        Signed in as <%= current_user.username %>
+        Signed in as <%= current_user.email %>
       </p>
-      <%= button_to "sign out", destroy_user_session_path, method: :delete, data: { turbo: false } %>
+      <%= button_to "unveil", destroy_user_session_path, method: :delete, data: { turbo: false } %>
       <% else %>
-      <%= link_to "sign in", new_user_session_path %>
+      <%= link_to "pierce veil", new_user_session_path %>
       <% end %>
     
 
