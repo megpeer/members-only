@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [ :create ]
   def index
    @post = Post.new
    @posts = Post.all.order(created_at: :asc)
   end
+
 
   def create
     @post = Post.new(post_params)

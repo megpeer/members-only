@@ -29,15 +29,21 @@
       <p class="alert"><%= alert %></p>
       </header>
 
-      <p>Wizard Messages<br>
-      pierce the veil to break through and discover the wizard identities!<br></p>
+      <p>Wizard Council Messages<br>
+     enter the realm to reveal the wizard identities!<br></p>
       <% if user_signed_in? %>
       <p>
-        Signed in as <%= current_user.email %>
-      </p>
-      <%= button_to "unveil", destroy_user_session_path, method: :delete, data: { turbo: false } %>
+        acolyte <strong><%= current_user.username %> </strong> has enterd the wizard realm 
+        <br>
+        <%= link_to "edit acolyte", edit_user_registration_path%>
+        </p>
+        <%= button_to "exit realm", destroy_user_session_path, method: :delete, data: { turbo: false } %>
+
       <% else %>
-      <%= link_to "pierce veil", new_user_session_path %>
+      <p>
+        the acolyte is not currently within the wizrding realm.
+      </p>
+      <%# <%=# link_to "enter realm", new_user_session_path %> 
       <% end %>
     
 
