@@ -1,24 +1,20 @@
-# README
+# Members only
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project created while following the Odin Project Ruby on Rails Curriculum. View the lesson details here:[members only!](https://www.theodinproject.com/lessons/ruby-on-rails-members-only)
 
-Things you may want to cover:
+## Goals
 
-* Ruby version
+The main purpose of this project is to familiarize and gain experience with OATH, and user authentication, so that users only have access to areas of the appliction they are authorized to.
 
-* System dependencies
 
-* Configuration
+## Usage
+- Log in and sign up securely
+- Create, edit, delete posts
+- Authenticate user logins to display user names.
+- If user is not logged in, all posts are anonymous.
 
-* Database creation
+## Tech Stack
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby on Rails
+- SQLite3 (development)
+- Authentication: Devise
